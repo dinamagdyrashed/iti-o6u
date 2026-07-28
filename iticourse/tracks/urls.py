@@ -1,10 +1,10 @@
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path
 
 from .views import *
 urlpatterns=[
     path('',allTracks),
-    path('id/',gettrackbyid),
-    path('update/<int:id>/',updatetrack),
-    path('delete/',deletetrack),
+    path('id/<int:id>/',gettrackbyid),
+    path('update/<int:id>/',updatetrack,name='updatetrack'),
+    path('delete/<int:id>/',deletetrack,name='deletetrack'),
 ]

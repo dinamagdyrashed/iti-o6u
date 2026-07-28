@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+<ul>
+    {% for track in tracks %}
+    <li>{{track.0}} - {{track.1}}</li>
+    {%endfor%}
+</ul>
+
+<img src="{% static 'img/download.jfif'%}" alt="asd">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, ea beatae! Consectetur beatae sed mollitia.
+    Explicabo numquam repellendus eum, praesentium delectus incidunt. Quos, soluta beatae incidunt fugiat ad ipsum
+    recusandae?
+</p>
+
+<table width="100%" border="1">
+    <tr>
+        <td>ID</td>
+        <td>Course</td>
+        <td>Actions</td>
+    </tr>
+    {% for track in tracks%}
+    <tr>
+        <td>{{ track.0 }}</td>
+        <td>{{track.1 }}</td>
+        <td><a href="{% url 'updatetrack' track.0%}">Update</a> <a href="{% url 'deletetrack' track.0%}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<!-- <script src="{% static 'js/main.js'%}"></script> -->
+
+{% endblock %}
