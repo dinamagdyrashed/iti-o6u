@@ -1,4 +1,32 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+all trainee
+{% endblock%}
 {% block content%}
-<p>this is trainee page</p>
+
+
+
+<table width="100%" border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Actions</td>
+    </tr>
+    {% for trainee in trainees%}
+    <tr>
+        <td>{{ trainee.id }}</td>
+        <td>{{trainee.name }}</td>
+        <td>{{trainee.email }}</td>
+        <td><a href="{% url 'updatetrainee' trainee.id%}">Update</a> <a
+                href="{% url 'deletetrainee' trainee.id%}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<!-- <script src="{% static 'js/main.js'%}"></script> -->
+
 {% endblock %}

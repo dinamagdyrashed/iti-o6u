@@ -5,3 +5,7 @@ pip install django
 django-admin startproject iticourse
 python manage.py runserver
 python manage.py startapp myuser
+
+pip install psygopc2   -- pip install psygopc2.binary
+python manage.py makemigrations
+python manage.py migrate

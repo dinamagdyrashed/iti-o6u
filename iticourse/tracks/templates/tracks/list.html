@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block title %}
+all tracks
+{% endblock%}
 {% block content%}
-<ul>
+<!-- <ul>
     {% for track in tracks %}
     <li>{{track.0}} - {{track.1}}</li>
     {%endfor%}
-</ul>
+</ul> -->
 
 <img src="{% static 'img/download.jfif'%}" alt="asd">
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, ea beatae! Consectetur beatae sed mollitia.
@@ -22,9 +26,10 @@
     </tr>
     {% for track in tracks%}
     <tr>
-        <td>{{ track.0 }}</td>
-        <td>{{track.1 }}</td>
-        <td><a href="{% url 'updatetrack' track.0%}">Update</a> <a href="{% url 'deletetrack' track.0%}">Delete</a></td>
+        <td>{{ track.id }}</td>
+        <td>{{track.name }}</td>
+        <td><a href="{% url 'updatetrack' track.id%}">Update</a> <a href="{% url 'deletetrack' track.id%}">Delete</a>
+        </td>
     </tr>
     {% endfor %}
 </table>
