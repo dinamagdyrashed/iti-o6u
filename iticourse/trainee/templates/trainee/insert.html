@@ -7,7 +7,7 @@ insert trainee
 
 <h1>Insert Trainee</h1>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
     <label for="trname">Name</label>
@@ -16,6 +16,10 @@ insert trainee
 
     <label for="tremail">Email</label>
     <input type="text" id="tremail" name="tremail">
+    <br>
+
+    <label for="trimg">Image</label>
+    <input type="file" id="trimg" name="trimg">
     <br>
     <button type="submit">Add Trainee</button>
 </form>

@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf.urls.static import static
+from django.conf import settings
+
 from myuser.views import *
 from tracks.views import *
 urlpatterns = [
@@ -23,4 +26,4 @@ urlpatterns = [
     path('',include('myuser.urls')),
     path('track/',include('tracks.urls')),
     path('trainee/',include('trainee.urls'))
-]
+]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

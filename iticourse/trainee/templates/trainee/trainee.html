@@ -14,6 +14,8 @@ all trainee
         <td>ID</td>
         <td>Name</td>
         <td>Email</td>
+        <td>Image</td>
+        <td>Status</td>
         <td>Actions</td>
     </tr>
     {% for trainee in trainees%}
@@ -21,6 +23,14 @@ all trainee
         <td>{{ trainee.id }}</td>
         <td>{{trainee.name }}</td>
         <td>{{trainee.email }}</td>
+        <td>
+            {% if trainee.image %}
+            <img style="width: 200px;" src="{{ trainee.image.url }}" alt="{{ trainee.name }}">
+            {% else %}
+            No Image
+            {% endif %}
+        </td>
+        <td>{% if trainee.status%}Active{%else%}Inactive{%endif%}</td>
         <td><a href="{% url 'updatetrainee' trainee.id%}">Update</a> <a
                 href="{% url 'deletetrainee' trainee.id%}">Delete</a>
         </td>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+insert trainee
+{% endblock%}
+{% block content%}
+
+<h1>Insert Trainee</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label for="trname">Name</label>
+    <input type="text" id="trname" name="trname">
+    <br>
+    <button type="submit">Add Track</button>
+</form>
+
+{% endblock %}
